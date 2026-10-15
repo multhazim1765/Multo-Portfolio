@@ -43,7 +43,15 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   // Profile state
   const [profile, setProfile] = useState<SiteProfile>(() => {
     const saved = localStorage.getItem(STORAGE_KEYS.PROFILE);
-    return saved ? JSON.parse(saved) : initialProfile;
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      if (parsed.name === 'Multhazim') {
+        parsed.name = 'AHAMED MULTHAZIM';
+        localStorage.setItem(STORAGE_KEYS.PROFILE, JSON.stringify(parsed));
+      }
+      return parsed;
+    }
+    return initialProfile;
   });
 
   // Projects state
