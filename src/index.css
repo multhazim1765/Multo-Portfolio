@@ -1,0 +1,173 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --primary: #ffffff;
+    --secondary: #142b4a;
+    --accent: #2563eb;
+    --bg-secondary: #f3f6fa;
+    --text-main: #172033;
+    --text-muted: #64748b;
+    --border-soft: #e2e8f0;
+  }
+
+  body {
+    background-color: #ffffff;
+    color: #172033;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom subtle utility styling adhering to strict visual guidelines: NO gradients, NO excessive blobs */
+.navy-bg {
+  background-color: #142b4a;
+}
+
+.navy-text {
+  color: #142b4a;
+}
+
+.electric-blue-bg {
+  background-color: #2563eb;
+}
+
+.electric-blue-text {
+  color: #2563eb;
+}
+
+.section-alt {
+  background-color: #f3f6fa;
+}
+
+/* Clean interactive card with restrained border and subtle hover */
+.premium-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.premium-card:hover {
+  transform: translateY(-2px);
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 12px 0 rgba(20, 43, 74, 0.07);
+}
+
+/* 3D tilt container without bloated libraries */
+.hero-photo-wrapper {
+  perspective: 1000px;
+}
+
+.hero-photo-inner {
+  transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+/* Hide scrollbar for clean carousel */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Continuous infinite swipe marquee animations */
+@keyframes infiniteSwipeLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes infiniteSwipeRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-infinite-swipe {
+  display: flex;
+  width: max-content;
+  animation: infiniteSwipeLeft 32s linear infinite;
+}
+
+.animate-infinite-swipe-reverse {
+  display: flex;
+  width: max-content;
+  animation: infiniteSwipeRight 32s linear infinite;
+}
+
+.animate-infinite-swipe-slow {
+  display: flex;
+  width: max-content;
+  animation: infiniteSwipeLeft 40s linear infinite;
+}
+
+.pause-hover:hover {
+  animation-play-state: paused;
+}
+
+/* 3D Perspective Card Showcase */
+.perspective-container {
+  perspective: 1200px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* Print CSS to isolate resume modal content cleanly onto 2 pages without printing the background site */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  
+  #resume-printable-area, #resume-printable-area * {
+    visibility: visible;
+  }
+
+  #resume-printable-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 12mm 15mm;
+  }
+}
