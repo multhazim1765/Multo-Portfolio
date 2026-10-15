@@ -30,7 +30,7 @@ interface AppContextType {
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
 const STORAGE_KEYS = {
-  PROFILE: 'vmakitec_profile_v2',
+  PROFILE: 'vmakitec_profile_v3',
   PROJECTS: 'vmakitec_projects_v1',
   TECH_SERVICES: 'vmakitec_tech_services_v1',
   CITIZEN_SERVICES: 'vmakitec_citizen_services_v2',
@@ -40,15 +40,12 @@ const STORAGE_KEYS = {
 };
 
 export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  // Profile state
+  // Profile state - guaranteed to reflect full name AHAMED MULTHAZIM
   const [profile, setProfile] = useState<SiteProfile>(() => {
     const saved = localStorage.getItem(STORAGE_KEYS.PROFILE);
     if (saved) {
       const parsed = JSON.parse(saved);
-      if (parsed.name === 'Multhazim') {
-        parsed.name = 'AHAMED MULTHAZIM';
-        localStorage.setItem(STORAGE_KEYS.PROFILE, JSON.stringify(parsed));
-      }
+      parsed.name = 'AHAMED MULTHAZIM';
       return parsed;
     }
     return initialProfile;
