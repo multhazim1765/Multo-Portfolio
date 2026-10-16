@@ -92,7 +92,7 @@ export const ContactSection: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white border-b border-[#E2E8F0]">
+    <section id="contact" className="py-14 sm:py-20 bg-white border-b border-[#E2E8F0]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -109,7 +109,7 @@ export const ContactSection: React.FC = () => {
         </div>
 
         {/* Content Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           
           {/* Left Column: Direct details */}
           <div className="lg:col-span-5 space-y-6">
@@ -176,19 +176,6 @@ export const ContactSection: React.FC = () => {
                     LinkedIn
                   </a>
                 </div>
-              </div>
-            </div>
-
-            {/* Response timeframe note */}
-            <div className="p-5 bg-white border border-[#E2E8F0] rounded-lg">
-              <h4 className="text-xs font-bold text-[#142B4A] uppercase tracking-wider mb-2">
-                Operational Commitments
-              </h4>
-              <p className="text-xs text-[#64748B] leading-relaxed mb-3">
-                All enquiries are recorded into the admin dashboard immediately. Typically responded to within 12-24 business hours.
-              </p>
-              <div className="text-[11px] text-[#2563EB] font-medium bg-[#F8FAFC] p-2.5 rounded border border-[#E2E8F0]">
-                • Independent application assistance • Technical scoping consultations
               </div>
             </div>
           </div>

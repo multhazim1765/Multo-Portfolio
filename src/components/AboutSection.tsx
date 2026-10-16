@@ -7,7 +7,7 @@ export const AboutSection: React.FC = () => {
   const { profile } = useApp();
 
   return (
-    <section id="about" className="py-20 bg-white border-b border-[#E2E8F0]">
+    <section id="about" className="py-14 sm:py-20 bg-white border-b border-[#E2E8F0]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -24,7 +24,7 @@ export const AboutSection: React.FC = () => {
         </div>
 
         {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
           
           {/* Left Column: Core Narrative */}
           <div className="lg:col-span-8 space-y-6">
@@ -84,7 +84,7 @@ export const AboutSection: React.FC = () => {
           </div>
 
           {/* Right Column: Verified Identity Card & Links */}
-          <div className="lg:col-span-4 space-y-6">
+          <div className="lg:col-span-4 space-y-6 lg:sticky lg:top-24">
             <div className="bg-white border border-[#E2E8F0] rounded-lg p-6 shadow-xs">
               <div className="flex items-center gap-4 mb-5 pb-5 border-b border-[#E2E8F0]">
                 <img
@@ -143,28 +143,6 @@ export const AboutSection: React.FC = () => {
                 </a>
               </div>
             </div>
-
-            {/* Core Values / Principles */}
-            <div className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg p-5">
-              <h4 className="text-xs font-bold text-[#142B4A] uppercase tracking-wider mb-3">
-                Engineering Principles
-              </h4>
-              <div className="space-y-2.5 text-xs text-[#64748B]">
-                <div className="flex items-start gap-2">
-                  <span className="text-[#2563EB] font-bold">01.</span>
-                  <span><strong className="text-[#142B4A]">Truth in Data:</strong> Validate assumptions with empirical metrics before jumping into complex deep architectures.</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <span className="text-[#2563EB] font-bold">02.</span>
-                  <span><strong className="text-[#142B4A]">Resilient Engineering:</strong> Design offline-first tools so crucial operations never fail due to weak network reception.</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <span className="text-[#2563EB] font-bold">03.</span>
-                  <span><strong className="text-[#142B4A]">Responsible Accessibility:</strong> Build intuitive interfaces that regular citizens can navigate effortlessly.</span>
-                </div>
-              </div>
-            </div>
-
           </div>
 
         </div>

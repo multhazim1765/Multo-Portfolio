@@ -41,7 +41,7 @@ export const SkillsSection: React.FC = () => {
   const repeatedCards = [...initialSkills, ...initialSkills, ...initialSkills, ...initialSkills];
 
   return (
-    <section id="skills" className="py-20 sm:py-24 bg-[#F3F6FA] border-b border-[#E2E8F0] overflow-hidden">
+    <section id="skills" className="py-14 sm:py-20 bg-[#F3F6FA] border-b border-[#E2E8F0] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -129,13 +129,6 @@ export const SkillsSection: React.FC = () => {
               </div>
             );
           })}
-        </div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Note on Skill Transparency */}
-        <div className="mt-10 p-4 bg-white border border-[#E2E8F0] rounded-xl max-w-2xl mx-auto text-center text-xs text-[#64748B] shadow-2xs">
-          <strong className="text-[#142B4A]">Commitment to Transparency:</strong> We avoid arbitrary metric meters (e.g., "95% Python"). Technical skills are backed by direct implementation in projects like MultoBill and the Rural Telehealth system.
         </div>
       </div>
     </section>
