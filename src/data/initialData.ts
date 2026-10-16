@@ -1,7 +1,7 @@
 import { SiteProfile, Project, TechService, DigitalCitizenService } from '../types';
 
 export const initialProfile: SiteProfile = {
-  name: "AHAMED MULTHAZIM",
+  name: "Ahamed Multhazim",
   headline: "Building Intelligent Solutions for Real-World Problems.",
   subheadline: "Final-Year B.Tech Artificial Intelligence & Data Science Student, Full-Stack Developer, and Technology Entrepreneur.",
   tagline: "Bridging the gap between cutting-edge Artificial Intelligence and everyday digital accessibility.",

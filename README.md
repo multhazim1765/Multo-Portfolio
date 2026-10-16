@@ -1,4 +1,4 @@
-# Multhazim — AI & Data Science Portfolio & VMAKITEC Digital Services
+# Ahamed Multhazim — AI & Data Science Portfolio & VMAKITEC Digital Services
 
 A modern, production-ready web application combining a technical engineering portfolio for an AI & Data Science graduate with a digital citizen service platform for **VMAKITEC Services and Tech Solutions** (“*We Make It Easy*”).
 

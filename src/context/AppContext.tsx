@@ -30,7 +30,7 @@ interface AppContextType {
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
 const STORAGE_KEYS = {
-  PROFILE: 'vmakitec_profile_v3',
+  PROFILE: 'vmakitec_profile_v4',
   PROJECTS: 'vmakitec_projects_v1',
   TECH_SERVICES: 'vmakitec_tech_services_v1',
   CITIZEN_SERVICES: 'vmakitec_citizen_services_v2',
@@ -40,13 +40,22 @@ const STORAGE_KEYS = {
 };
 
 export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  // Profile state - guaranteed to reflect full name AHAMED MULTHAZIM
+  // Profile state - guaranteed to reflect full name Ahamed Multhazim
   const [profile, setProfile] = useState<SiteProfile>(() => {
-    const saved = localStorage.getItem(STORAGE_KEYS.PROFILE);
+    const saved = localStorage.getItem(STORAGE_KEYS.PROFILE) ||
+      localStorage.getItem('vmakitec_profile_v3') ||
+      localStorage.getItem('vmakitec_profile_v2');
     if (saved) {
-      const parsed = JSON.parse(saved);
-      parsed.name = 'AHAMED MULTHAZIM';
-      return parsed;
+      try {
+        const parsed = JSON.parse(saved);
+        if (!parsed.name || parsed.name === 'Multhazim' || parsed.name === 'AHAMED MULTHAZIM') {
+          parsed.name = 'Ahamed Multhazim';
+        }
+        localStorage.setItem(STORAGE_KEYS.PROFILE, JSON.stringify(parsed));
+        return parsed;
+      } catch (e) {
+        console.error(e);
+      }
     }
     return initialProfile;
   });
